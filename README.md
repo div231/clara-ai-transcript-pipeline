@@ -166,7 +166,29 @@ streamlit run dashboard.py
 Then open:
 
 http://localhost:8501
+Example Output
+Example generated memo:
 
+{
+  "company_name": "Apex Electrical Services",
+  "services_supported": [
+    "electrical",
+    "generator",
+    "panel",
+    "lighting"
+  ],
+  "business_hours": "8am - 5pm",
+  "integration_constraints": [
+    "jobber",
+    "quickbooks"
+  ],
+  "phone_numbers": [
+    "214-555-9812"
+  ],
+  "emails": [
+    "mike@apexelectrical.com"
+  ]
+}
 Design Principles
 The pipeline follows several principles:
 
