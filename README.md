@@ -1,181 +1,194 @@
-Clara AI Transcript Configuration Pipeline
-Overview
-This project implements a pipeline that converts customer call transcripts into structured configuration artifacts used to deploy AI voice agents.
+Here’s a **clean, professional README you can paste directly into GitHub’s README editor**. No commands, no extra formatting headaches — just copy everything below.
+
+---
+
+# Clara AI Transcript Configuration Pipeline
+
+## Overview
+
+This project implements a pipeline that converts **customer call transcripts into structured configuration artifacts** used to deploy AI voice agents.
 
 The system processes two types of transcripts:
 
-Demo Call Transcripts → Generate initial configuration
+* **Demo Call Transcripts** → Generate an initial configuration
+* **Onboarding Call Transcripts** → Update and refine the configuration
 
-Onboarding Call Transcripts → Update and refine configuration
+The pipeline extracts operational information such as services offered, business hours, contact details, integrations, pricing, and routing rules, then converts this information into structured JSON outputs.
 
-The pipeline extracts relevant information such as services, business hours, integrations, contact details, and emergency routing logic, and converts it into structured JSON outputs.
+It also maintains **versioned configurations** and tracks changes between versions.
 
-It also generates versioned configurations and tracks changes between versions.
+---
 
-System Architecture
+## System Workflow
+
 Demo Transcript
-      │
-      ▼
-Demo Extractor
-      │
-      ▼
-Account Memo v1
-      │
-      ▼
-Agent Configuration v1
-      │
-      ▼
+↓
+Demo Extraction
+↓
+Account Memo (v1)
+↓
+Agent Configuration (v1)
+↓
 Onboarding Transcript
-      │
-      ▼
-Onboarding Extractor
-      │
-      ▼
-Account Memo v2
-      │
-      ▼
-Agent Configuration v2
-      │
-      ▼
-Diff Generator
-      │
-      ▼
+↓
+Onboarding Extraction
+↓
+Account Memo (v2)
+↓
+Agent Configuration (v2)
+↓
+Configuration Diff
+↓
 Change Log
-Project Structure
+
+---
+
+## Project Structure
+
+```
 clara-ai-transcript-pipeline
-│
-├── dataset
-│   ├── demo_calls
-│   │   ├── account1.txt
-│   │   ├── account2.txt
-│   │   └── ...
-│   │
-│   └── onboarding_calls
-│       ├── account1.txt
-│       ├── account2.txt
-│       └── ...
-│
-├── outputs
-│   └── accounts
-│       ├── account1
-│       │   ├── v1
-│       │   │   ├── memo.json
-│       │   │   └── agent.json
-│       │   │
-│       │   ├── v2
-│       │   │   ├── memo.json
-│       │   │   └── agent.json
-│       │   │
-│       │   └── changes.json
-│       │
-│       └── ...
-│
-├── scripts
-│   ├── extract_demo.py
-│   ├── extract_onboarding.py
-│   ├── diff_generator.py
-│   ├── agent_generator.py
-│   ├── batch_runner.py
-│   └── logger.py
-│
-├── templates
-│   └── agent_prompt.txt
-│
-├── dashboard.py
-├── run_pipeline.py
-└── README.md
-Features
-Transcript Processing
-Extracts structured data from unstructured call transcripts.
 
-Extracted fields include:
+dataset/
+    demo_calls/
+    onboarding_calls/
 
-Company name
+scripts/
+    extract_demo.py
+    extract_onboarding.py
+    diff_generator.py
+    agent_generator.py
+    batch_runner.py
+    logger.py
 
-Services offered
+templates/
+    agent_prompt.txt
 
-Business hours
+outputs/
+    accounts/
+        account1/
+            v1/
+            v2/
+            changes.json
 
-Phone numbers
+dashboard.py
+run_pipeline.py
+README.md
+```
 
-Email addresses
+---
 
-Pricing mentions
+## Features
 
-Software integrations
+### Transcript Processing
 
-Emergency definitions
+Extracts structured information from unstructured call transcripts.
 
-Call routing rules
+Information extracted includes:
 
-Configuration Generation
-Produces structured configuration artifacts:
+* Company name
+* Services offered
+* Business hours
+* Email addresses
+* Phone numbers
+* Pricing mentions
+* Software integrations
+* Emergency definitions
+* Call routing rules
 
-Account Memo
+---
 
-memo.json
-Contains operational details extracted from transcripts.
+### Configuration Generation
 
-Agent Configuration
+The pipeline generates two primary artifacts:
 
-agent.json
-Defines how the AI voice agent should behave.
+**Account Memo (`memo.json`)**
+A structured representation of operational details extracted from transcripts.
 
-Versioning
-Each account configuration is versioned:
+**Agent Configuration (`agent.json`)**
+Defines the AI voice agent’s behavior for handling incoming customer calls.
 
-v1 → generated from demo transcript
-v2 → updated with onboarding transcript
-This simulates how real systems evolve as more customer information becomes available.
+---
 
-Change Tracking
-A diff generator compares configuration versions and produces:
+### Versioning
 
-changes.json
-This shows what changed between v1 and v2.
+Each account configuration is versioned.
 
-Example:
+* **v1** → Generated from the demo transcript
+* **v2** → Updated using onboarding transcript data
 
-business_hours: null → 8am - 5pm
-emergency_definition added
-call_transfer_rules added
-Dashboard Viewer
-A simple Streamlit dashboard allows exploration of generated configurations.
+This mirrors how real systems evolve as more client information becomes available.
 
-Users can:
+---
 
-Select account
+### Change Tracking
 
-Select version
+A diff generator compares configuration versions and produces a change log.
 
-View memo
+Example changes:
 
-View agent configuration
+* Business hours updated
+* Emergency routing rules added
+* New integrations confirmed
+* Contact information updated
 
-Inspect configuration changes
+All changes are stored in `changes.json`.
 
-Running the Pipeline
-1 Install Dependencies
+---
+
+### Dashboard Viewer
+
+A simple **Streamlit dashboard** allows users to inspect generated configurations.
+
+The dashboard allows users to:
+
+* Select an account
+* Select configuration version
+* View account memo
+* View agent configuration
+* Inspect configuration changes
+
+---
+
+## Running the Project
+
+1. Install dependencies
+
+```
 pip install streamlit
-2 Run the Pipeline
+```
+
+2. Run the pipeline
+
+```
 python run_pipeline.py
-This processes all transcripts and generates outputs.
+```
 
-3 Launch Dashboard
+3. Launch the dashboard
+
+```
 streamlit run dashboard.py
-Then open:
+```
 
+Open the dashboard at:
+
+```
 http://localhost:8501
-Example Output
+```
+
+---
+
+## Example Output
+
 Example generated memo:
 
+```
 {
   "company_name": "Apex Electrical Services",
   "services_supported": [
     "electrical",
     "generator",
-    "panel",
-    "lighting"
+    "lighting",
+    "panel"
   ],
   "business_hours": "8am - 5pm",
   "integration_constraints": [
@@ -189,47 +202,40 @@ Example generated memo:
     "mike@apexelectrical.com"
   ]
 }
-Design Principles
-The pipeline follows several principles:
+```
 
-Deterministic Extraction
-Only extract information explicitly present in transcripts.
+---
 
-No Hallucination
-Missing data remains null and is flagged as unknown.
+## Design Principles
 
-Incremental Configuration
-Onboarding transcripts update existing configuration rather than replacing it.
+**Deterministic Extraction**
+The system extracts only information explicitly present in transcripts.
 
-Traceable Changes
-All configuration updates are recorded via diffs.
+**No Hallucination**
+Missing information remains empty and is flagged as unknown.
 
-Technologies Used
-Python
+**Incremental Configuration**
+Onboarding transcripts refine and extend existing configuration rather than replacing it.
 
-Regex-based text extraction
+**Traceable Changes**
+All updates between configuration versions are tracked.
 
-JSON configuration generation
+---
 
-Streamlit dashboard
+## Technologies Used
 
-Git version control
+* Python
+* Regex-based text extraction
+* JSON configuration generation
+* Streamlit dashboard
+* Git version control
 
-Future Improvements
-Possible enhancements include:
+---
 
-NLP-based entity extraction
+## Author
 
-LLM-assisted transcript parsing
-
-automatic routing rule generation
-
-integration validation
-
-richer dashboard analytics
-
-Author
 Divyansh Rao
 
-License
-This project is for demonstration and educational purposes.
+---
+
+If you want, I can also help you add **one small section that makes the README look like a real startup project (with architecture + pipeline diagram)** which makes the repo look **way more impressive to recruiters.**
