@@ -1,0 +1,39 @@
+{
+    "account_id": "account3",
+    "company_name": "Brightspark Electric",
+    "business_hours": null,
+    "office_address": null,
+    "services_supported": [
+        "repair",
+        "service",
+        "lighting",
+        "electrical",
+        "panel",
+        "install",
+        "charger",
+        "installation"
+    ],
+    "emergency_definition": [],
+    "emergency_routing_rules": null,
+    "non_emergency_routing_rules": null,
+    "call_transfer_rules": null,
+    "integration_constraints": [
+        "quickbooks",
+        "servicetitan"
+    ],
+    "after_hours_flow_summary": null,
+    "office_hours_flow_summary": null,
+    "questions_or_unknowns": [
+        "Business hours not confirmed"
+    ],
+    "notes": "Generated from demo transcript",
+    "emails": [
+        "sarah@brightsparkelectric.com"
+    ],
+    "phone_numbers": [
+        "602-555-7721"
+    ],
+    "pricing_mentions": [
+        "$129"
+    ]
+}

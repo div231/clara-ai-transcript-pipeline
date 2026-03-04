@@ -1,0 +1,40 @@
+{
+    "account_id": "account2",
+    "company_name": "Apex Electrical Services",
+    "business_hours": null,
+    "office_address": null,
+    "services_supported": [
+        "repair",
+        "service",
+        "lighting",
+        "electrical",
+        "generator",
+        "panel",
+        "install",
+        "charger",
+        "installation"
+    ],
+    "emergency_definition": [],
+    "emergency_routing_rules": null,
+    "non_emergency_routing_rules": null,
+    "call_transfer_rules": null,
+    "integration_constraints": [
+        "jobber",
+        "quickbooks"
+    ],
+    "after_hours_flow_summary": null,
+    "office_hours_flow_summary": null,
+    "questions_or_unknowns": [
+        "Business hours not confirmed"
+    ],
+    "notes": "Generated from demo transcript",
+    "emails": [
+        "mike@apexelectrical.com"
+    ],
+    "phone_numbers": [
+        "214-555-9812"
+    ],
+    "pricing_mentions": [
+        "$149"
+    ]
+}

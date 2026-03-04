@@ -1,0 +1,39 @@
+{
+    "account_id": "account5",
+    "company_name": "Voltagepro Electric",
+    "business_hours": "8:30am - 5:30pm",
+    "office_address": null,
+    "services_supported": [
+        "repair",
+        "service",
+        "lighting",
+        "electrical",
+        "troubleshooting",
+        "install",
+        "charger",
+        "generator"
+    ],
+    "emergency_definition": [],
+    "emergency_routing_rules": null,
+    "non_emergency_routing_rules": null,
+    "call_transfer_rules": null,
+    "integration_constraints": [
+        "jobber",
+        "service fusion"
+    ],
+    "after_hours_flow_summary": null,
+    "office_hours_flow_summary": null,
+    "questions_or_unknowns": [
+        "Business hours not confirmed"
+    ],
+    "notes": "Generated from demo transcript",
+    "emails": [
+        "office@voltageproelectric.com"
+    ],
+    "phone_numbers": [
+        "512-555-9043"
+    ],
+    "pricing_mentions": [
+        "$159"
+    ]
+}

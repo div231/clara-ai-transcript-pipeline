@@ -1,0 +1,38 @@
+{
+    "account_id": "account4",
+    "company_name": "Northstar Electric",
+    "business_hours": "9am - 6pm",
+    "office_address": null,
+    "services_supported": [
+        "wiring",
+        "service",
+        "lighting",
+        "electrical",
+        "panel",
+        "install",
+        "generator"
+    ],
+    "emergency_definition": [],
+    "emergency_routing_rules": null,
+    "non_emergency_routing_rules": null,
+    "call_transfer_rules": null,
+    "integration_constraints": [
+        "quickbooks",
+        "housecall"
+    ],
+    "after_hours_flow_summary": null,
+    "office_hours_flow_summary": null,
+    "questions_or_unknowns": [
+        "Business hours not confirmed"
+    ],
+    "notes": "Generated from demo transcript",
+    "emails": [
+        "dispatch@northstarelectric.com"
+    ],
+    "phone_numbers": [
+        "303-555-1884"
+    ],
+    "pricing_mentions": [
+        "$175"
+    ]
+}

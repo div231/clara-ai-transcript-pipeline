@@ -1,0 +1,47 @@
+{
+    "account_id": "account1",
+    "company_name": "Ben'S Electric Solutions",
+    "business_hours": null,
+    "office_address": null,
+    "services_supported": [
+        "wiring",
+        "service",
+        "maintenance",
+        "lighting",
+        "electrical",
+        "generator",
+        "panel",
+        "troubleshooting",
+        "install",
+        "charger",
+        "installation"
+    ],
+    "emergency_definition": [
+        "Emergency calls mentioned in transcript"
+    ],
+    "emergency_routing_rules": null,
+    "non_emergency_routing_rules": null,
+    "call_transfer_rules": "Certain calls may transfer directly to business owner",
+    "integration_constraints": [
+        "jobber",
+        "quickbooks",
+        "service fusion"
+    ],
+    "after_hours_flow_summary": "AI should capture call details and escalate if emergency",
+    "office_hours_flow_summary": "AI collects caller info and schedules service visit",
+    "questions_or_unknowns": [
+        "Business hours not confirmed"
+    ],
+    "notes": "Generated from demo transcript",
+    "emails": [
+        "info@benlectricsolutionsteam.com."
+    ],
+    "phone_numbers": [
+        "403-975-1773"
+    ],
+    "pricing_mentions": [
+        "$115",
+        "$98",
+        "$150"
+    ]
+}
