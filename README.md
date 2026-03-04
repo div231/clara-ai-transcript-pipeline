@@ -1,6 +1,4 @@
-Here’s a **clean, professional README you can paste directly into GitHub’s README editor**. No commands, no extra formatting headaches — just copy everything below.
 
----
 
 # Clara AI Transcript Configuration Pipeline
 
